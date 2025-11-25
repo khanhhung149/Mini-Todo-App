@@ -239,7 +239,6 @@ const BoardPage = () => {
               </div>
             )})}
 
-            {/* NÚT THÊM CỘT MỚI */}
             <div className="w-[300px] shrink-0">
                  <button 
                     onClick={handleAddColumn}
@@ -248,7 +247,6 @@ const BoardPage = () => {
                     <Plus size={20}/> Add Column
                  </button>
                  
-                 {/* Nút Add Task cũng để ở đây cho tiện */}
                  <button 
                     onClick={openCreateModal}
                     className="flex items-center justify-center w-full h-12 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 font-medium gap-2"
@@ -261,7 +259,6 @@ const BoardPage = () => {
         </DragDropContext>
       </div>
 
-      {/* MODAL (Dùng chung Create/Edit) */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg shadow-xl w-full max-w-md overflow-hidden">
@@ -273,7 +270,6 @@ const BoardPage = () => {
             </div>
             <form onSubmit={handleSubmit} className="p-4 space-y-4">
               
-              {/* Task ID Readonly (Chỉ hiện khi Edit) */}
               {editingTask && (
                 <div className="text-xs font-bold text-gray-400 uppercase">
                    ID: {editingTask.taskId}

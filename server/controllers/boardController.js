@@ -11,23 +11,6 @@ export const getBoard =async(req, res) =>{
     }
 }
 
-export const createSampleData = async (req, res) => {
-  try {
-    
-    await Task.deleteMany({});
-    await Column.deleteMany({});
-
-    
-    await Column.create({ title: 'TO DO', taskIds: [] });
-    await Column.create({ title: 'IN PROGRESS', taskIds: [] });
-    await Column.create({ title: 'REVIEWING', taskIds: [] });
-    await Column.create({ title: 'DONE', taskIds: [] });
-
-    res.json({ msg: 'Database initialized with 4 columns' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
 
 export const updateColumnOrder = async (req, res) => {
   const { columnId, newTaskIds } = req.body; 
